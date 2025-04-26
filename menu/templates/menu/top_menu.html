@@ -1,0 +1,12 @@
+{% load menu_tags %}
+
+<ul>
+    {% for item in menu_items %}
+      <li class="{{ item.slug }}">
+        <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+        {% if item.children.all %}
+            {% recursive_menu_template item.children.all expanded_slugs item.get_absolute_url %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>

@@ -1,26 +1,16 @@
-# Dockerfile
 FROM python:3-alpine
 
-# Устанавливаем рабочую директорию
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Устанавливаем переменные окружения
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+COPY requirements.txt .
 
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install --upgrade pip
-# Копируем requirements.txt
-COPY ./requirements.txt .
-
-# Устанавливаем зависимости
-RUN python3 -m pip install -r requirements.txt --no-cache-dir
-
-# Копируем исходный код
 COPY . .
 
-# Применяем миграции
-RUN python manage.py migrate
+RUN python manage.py collectstatic --noinput
 
-# Запускаем сервер разработки (для продакшена лучше использовать gunicorn или uWSGI)
-CMD ["python", "app.py"]
+ENV DJANGO_SETTINGS_MODULE=config.settings
+ENV PYTHONPATH=/app
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

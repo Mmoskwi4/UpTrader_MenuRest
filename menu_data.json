@@ -1,0 +1,119 @@
+[
+  {
+    "model": "menu.menu",
+    "pk": 1,
+    "fields": {
+      "name": "Main"
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 1,
+    "fields": {
+      "menu": 1,
+      "title": "Гастрономические Приключения",
+      "url": "gastronomic_adventures",
+      "slug": "gastronomicheskie-priklyucheniya",
+      "parent": null
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 2,
+    "fields": {
+      "menu": 1,
+      "title": "Итальянская Симфония",
+      "url": "italian_symphony",
+      "slug": "italyanskaya-simfoniya",
+      "parent": 1
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 3,
+    "fields": {
+      "menu": 1,
+      "title": "Французский Шарм",
+      "url": "french_charm",
+      "slug": "francuzskiy-sharm",
+      "parent": 1
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 4,
+    "fields": {
+      "menu": 1,
+      "title": "Восточная Экзотика",
+      "url": "eastern_exotic",
+      "slug": "vostochnaya-ekzotika",
+      "parent": 1
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 5,
+    "fields": {
+      "menu": 1,
+      "title": "Паста Ручной Работы",
+      "url": "handmade_pasta",
+      "slug": "pasta-ruchnoy-raboty",
+      "parent": 2
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 6,
+    "fields": {
+      "menu": 1,
+      "title": "Ризотто с Белыми Грибами",
+      "url": "risotto_with_mushrooms",
+      "slug": "rizotto-s-belymi-gribami",
+      "parent": 2
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 7,
+    "fields": {
+      "menu": 1,
+      "title": "Тирамису Классический",
+      "url": "tiramisu_classic",
+      "slug": "tiramisu-klassicheskiy",
+      "parent": 2
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 8,
+    "fields": {
+      "menu": 1,
+      "title": "Круассан с Миндалем",
+      "url": "almond_croissant",
+      "slug": "kruassan-s-mindalem",
+      "parent": 3
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 9,
+    "fields": {
+      "menu": 1,
+      "title": "Луковый Суп Гратен",
+      "url": "onion_soup_gratin",
+      "slug": "lukovyy-sup-graten",
+      "parent": 3
+    }
+  },
+  {
+    "model": "menu.menuitem",
+    "pk": 10,
+    "fields": {
+      "menu": 1,
+      "title": "Крем-брюле с Ванилью",
+      "url": "vanilla_creme_brulee",
+      "slug": "krem-bryule-s-vanilyu",
+      "parent": 3
+    }
+  }
+]

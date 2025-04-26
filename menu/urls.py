@@ -1,6 +1,9 @@
 from django.urls import path
-from menu.views import FoodCategoryListView
+import menu.views as menu_v
+
+app_name = 'menu' # Namespace для именованных URL
 
 urlpatterns = [
-    path('foods/', FoodCategoryListView.as_view(), name='food-list'),
+    path('menu/', menu_v.home, name='home'),
+    path('menu/<path:slug_path>/', menu_v.menu_page, name='menu_page'),
 ]

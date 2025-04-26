@@ -1,30 +1,28 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from menu.models import FoodCategory, Food
-from menu.serializers import FoodCategorySerializer
-from django.db.models import Exists, OuterRef
-from drf_spectacular.utils import extend_schema_view, extend_schema
+from django.shortcuts import get_object_or_404, render
+from menu.models import MenuItem
 
 
-@extend_schema_view(
-    get=extend_schema(
-        summary="Список категорий блюд с опубликованными блюдами",
-        description="Возвращает список категорий, содержащих хотя бы одно опубликованное блюдо. Категории отсортированы по полю `order_id`.",
-        responses={200: FoodCategorySerializer(many=True)},
+def home(request):
+    menu_items = MenuItem.objects.filter(parent=None)  # Только элементы верхнего уровня
+    return render(request, "menu/home.html", {"menu_items": menu_items})
+
+
+def menu_page(request, slug_path):
+    slugs = slug_path.split("/")
+    menu_item = get_object_or_404(MenuItem, slug=slugs[-1])
+    children = MenuItem.objects.filter(parent=menu_item)  # Получаем потомков
+    parent_url = menu_item.get_parent_url()
+
+    # Формируем список slug для развернутых элементов
+    expanded_slugs = slugs  # Все slug из URL должны быть развернуты
+
+    return render(
+        request,
+        "menu/menu_page.html",
+        {
+            "menu_item": menu_item,
+            "menu_items": children,
+            "parent_url": parent_url,
+            "expanded_slugs": expanded_slugs,  # Передаем список slug
+        },
     )
-)
-class FoodCategoryListView(APIView):
-    """
-    Возвращает список категорий блюд, содержащих опубликованные блюда.
-    """
-    def get(self, request):
-        # Получаем категории, в которых есть опубликованные блюда
-        categories = FoodCategory.objects.annotate(
-            has_published_foods=Exists(
-                Food.objects.filter(category=OuterRef('pk'), is_publish=True)
-            )
-        ).filter(has_published_foods=True).order_by('order_id')
-
-        # Сериализуем отфильтрованные категории
-        serializer = FoodCategorySerializer(categories, many=True)
-        return Response(serializer.data)
