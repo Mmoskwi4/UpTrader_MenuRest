@@ -1,16 +1,13 @@
 import os
-import environ
+from dotenv import load_dotenv
 from pathlib import Path
 
-root = environ.Path(__file__) - 2
-env = environ.Env()
-environ.Env.read_env(env.str(root(), ".env"))
+load_dotenv()
 
-BASE_DIR = root()
-
-SECRET_KEY = env.str("SECRET_KEY")
-DEBUG = env.bool("DEBUG", default=False)
-ALLOWED_HOSTS = env.str("ALLOWED_HOSTS", default="").split(" ")
+BASE_DIR = Path(__file__).resolve().parent.parent
+SECRET_KEY = os.getenv("SECRET_KEY")
+DEBUG = os.getenv("DEBUG", "False") == "True"
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(", ")
 
 
 # Base
@@ -25,7 +22,7 @@ INSTALLED_APPS = [
 
 # Apps
 INSTALLED_APPS += [
-    "menu",
+    "menu_app",
 ]
 
 MIDDLEWARE = [
@@ -43,7 +40,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -97,6 +94,5 @@ LANGUAGE_CODE = "ru-RU"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
-
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Блог{% endblock %}
+
+{% block page_title %}Наш блог{% endblock %}
+
+{% block content %}
+<p>Страница "Блог". Пункт "Блог" должен быть развернут.</p>
+<p>Текущий URL: {{ request.path }}</p>
+{% endblock %}

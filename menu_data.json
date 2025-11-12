@@ -1,119 +1,314 @@
 [
-  {
-    "model": "menu.menu",
+{
+    "model": "menu_app.menuitem",
     "pk": 1,
     "fields": {
-      "name": "Main"
+        "name": "Главная",
+        "menu_name": "main_menu",
+        "url": "",
+        "named_url": "home",
+        "parent": null,
+        "order": 0
     }
-  },
-  {
-    "model": "menu.menuitem",
-    "pk": 1,
-    "fields": {
-      "menu": 1,
-      "title": "Гастрономические Приключения",
-      "url": "gastronomic_adventures",
-      "slug": "gastronomicheskie-priklyucheniya",
-      "parent": null
-    }
-  },
-  {
-    "model": "menu.menuitem",
+},
+{
+    "model": "menu_app.menuitem",
     "pk": 2,
     "fields": {
-      "menu": 1,
-      "title": "Итальянская Симфония",
-      "url": "italian_symphony",
-      "slug": "italyanskaya-simfoniya",
-      "parent": 1
+        "name": "О компании",
+        "menu_name": "main_menu",
+        "url": "",
+        "named_url": "",
+        "parent": null,
+        "order": 1
     }
-  },
-  {
-    "model": "menu.menuitem",
+},
+{
+    "model": "menu_app.menuitem",
     "pk": 3,
     "fields": {
-      "menu": 1,
-      "title": "Французский Шарм",
-      "url": "french_charm",
-      "slug": "francuzskiy-sharm",
-      "parent": 1
+        "name": "О нас",
+        "menu_name": "main_menu",
+        "url": "/about/",
+        "named_url": "",
+        "parent": 2,
+        "order": 0
     }
-  },
-  {
-    "model": "menu.menuitem",
+},
+{
+    "model": "menu_app.menuitem",
     "pk": 4,
     "fields": {
-      "menu": 1,
-      "title": "Восточная Экзотика",
-      "url": "eastern_exotic",
-      "slug": "vostochnaya-ekzotika",
-      "parent": 1
+        "name": "Команда",
+        "menu_name": "main_menu",
+        "url": "/team/",
+        "named_url": "",
+        "parent": 2,
+        "order": 1
     }
-  },
-  {
-    "model": "menu.menuitem",
+},
+{
+    "model": "menu_app.menuitem",
     "pk": 5,
     "fields": {
-      "menu": 1,
-      "title": "Паста Ручной Работы",
-      "url": "handmade_pasta",
-      "slug": "pasta-ruchnoy-raboty",
-      "parent": 2
+        "name": "Вакансии",
+        "menu_name": "main_menu",
+        "url": "/careers/",
+        "named_url": "",
+        "parent": 2,
+        "order": 2
     }
-  },
-  {
-    "model": "menu.menuitem",
+},
+{
+    "model": "menu_app.menuitem",
     "pk": 6,
     "fields": {
-      "menu": 1,
-      "title": "Ризотто с Белыми Грибами",
-      "url": "risotto_with_mushrooms",
-      "slug": "rizotto-s-belymi-gribami",
-      "parent": 2
+        "name": "Услуги",
+        "menu_name": "main_menu",
+        "url": "",
+        "named_url": "",
+        "parent": null,
+        "order": 2
     }
-  },
-  {
-    "model": "menu.menuitem",
+},
+{
+    "model": "menu_app.menuitem",
     "pk": 7,
     "fields": {
-      "menu": 1,
-      "title": "Тирамису Классический",
-      "url": "tiramisu_classic",
-      "slug": "tiramisu-klassicheskiy",
-      "parent": 2
+        "name": "Веб-разработка",
+        "menu_name": "main_menu",
+        "url": "/services/web/",
+        "named_url": "",
+        "parent": 6,
+        "order": 0
     }
-  },
-  {
-    "model": "menu.menuitem",
+},
+{
+    "model": "menu_app.menuitem",
     "pk": 8,
     "fields": {
-      "menu": 1,
-      "title": "Круассан с Миндалем",
-      "url": "almond_croissant",
-      "slug": "kruassan-s-mindalem",
-      "parent": 3
+        "name": "Мобильные приложения",
+        "menu_name": "main_menu",
+        "url": "/services/mobile/",
+        "named_url": "",
+        "parent": 6,
+        "order": 1
     }
-  },
-  {
-    "model": "menu.menuitem",
+},
+{
+    "model": "menu_app.menuitem",
     "pk": 9,
     "fields": {
-      "menu": 1,
-      "title": "Луковый Суп Гратен",
-      "url": "onion_soup_gratin",
-      "slug": "lukovyy-sup-graten",
-      "parent": 3
+        "name": "Дизайн",
+        "menu_name": "main_menu",
+        "url": "/services/design/",
+        "named_url": "",
+        "parent": 6,
+        "order": 2
     }
-  },
-  {
-    "model": "menu.menuitem",
+},
+{
+    "model": "menu_app.menuitem",
     "pk": 10,
     "fields": {
-      "menu": 1,
-      "title": "Крем-брюле с Ванилью",
-      "url": "vanilla_creme_brulee",
-      "slug": "krem-bryule-s-vanilyu",
-      "parent": 3
+        "name": "Консультации",
+        "menu_name": "main_menu",
+        "url": "/services/consulting/",
+        "named_url": "",
+        "parent": 6,
+        "order": 3
     }
-  }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 11,
+    "fields": {
+        "name": "Портфолио",
+        "menu_name": "main_menu",
+        "url": "/portfolio/",
+        "named_url": "",
+        "parent": null,
+        "order": 3
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 12,
+    "fields": {
+        "name": "Блог",
+        "menu_name": "main_menu",
+        "url": "",
+        "named_url": "",
+        "parent": null,
+        "order": 4
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 13,
+    "fields": {
+        "name": "Все статьи",
+        "menu_name": "main_menu",
+        "url": "/blog/",
+        "named_url": "",
+        "parent": 12,
+        "order": 0
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 14,
+    "fields": {
+        "name": "Технологии",
+        "menu_name": "main_menu",
+        "url": "/blog/tech/",
+        "named_url": "",
+        "parent": 12,
+        "order": 1
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 15,
+    "fields": {
+        "name": "Дизайн",
+        "menu_name": "main_menu",
+        "url": "/blog/design/",
+        "named_url": "",
+        "parent": 12,
+        "order": 2
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 16,
+    "fields": {
+        "name": "Маркетинг",
+        "menu_name": "main_menu",
+        "url": "/blog/marketing/",
+        "named_url": "",
+        "parent": 12,
+        "order": 3
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 17,
+    "fields": {
+        "name": "Контакты",
+        "menu_name": "main_menu",
+        "url": "/contact/",
+        "named_url": "",
+        "parent": null,
+        "order": 5
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 18,
+    "fields": {
+        "name": "Категории",
+        "menu_name": "sidebar_menu",
+        "url": "",
+        "named_url": "",
+        "parent": null,
+        "order": 0
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 19,
+    "fields": {
+        "name": "Программирование",
+        "menu_name": "sidebar_menu",
+        "url": "/categories/programming/",
+        "named_url": "",
+        "parent": 18,
+        "order": 0
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 20,
+    "fields": {
+        "name": "Python",
+        "menu_name": "sidebar_menu",
+        "url": "/categories/python/",
+        "named_url": "",
+        "parent": 19,
+        "order": 0
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 21,
+    "fields": {
+        "name": "Django",
+        "menu_name": "sidebar_menu",
+        "url": "/categories/django/",
+        "named_url": "",
+        "parent": 19,
+        "order": 1
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 22,
+    "fields": {
+        "name": "JavaScript",
+        "menu_name": "sidebar_menu",
+        "url": "/categories/javascript/",
+        "named_url": "",
+        "parent": 19,
+        "order": 2
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 23,
+    "fields": {
+        "name": "Дизайн",
+        "menu_name": "sidebar_menu",
+        "url": "/categories/design/",
+        "named_url": "",
+        "parent": 18,
+        "order": 1
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 24,
+    "fields": {
+        "name": "UI/UX",
+        "menu_name": "sidebar_menu",
+        "url": "/categories/ui-ux/",
+        "named_url": "",
+        "parent": 23,
+        "order": 0
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 25,
+    "fields": {
+        "name": "Графический дизайн",
+        "menu_name": "sidebar_menu",
+        "url": "/categories/graphic-design/",
+        "named_url": "",
+        "parent": 23,
+        "order": 1
+    }
+},
+{
+    "model": "menu_app.menuitem",
+    "pk": 26,
+    "fields": {
+        "name": "Маркетинг",
+        "menu_name": "sidebar_menu",
+        "url": "/categories/marketing/",
+        "named_url": "",
+        "parent": 18,
+        "order": 2
+    }
+}
 ]
